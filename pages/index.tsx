@@ -1,4 +1,4 @@
-import { Htag } from '../components';
+import { Htag, P } from '../components';
 import { Button } from '../components/Button/Button';
 
 export default function Home(): JSX.Element {
@@ -7,6 +7,9 @@ export default function Home(): JSX.Element {
       <Htag tag={'h1'}>gggg</Htag>
       <Button appearance={'primary'} arrow='right'> кнопка </Button>
       <Button appearance={'ghost'} arrow='down'> кнопка </Button>
+      <P size='s'>Мелкий</P>
+      <P size='m'>Средний</P>
+      <P size='l'>Большой</P>
     </div>
   );
 }
