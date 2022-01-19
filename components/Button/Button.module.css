@@ -5,13 +5,13 @@
 	padding: 10px;
 
 	cursor: pointer;
+	transition: all 0.5s;
 	text-align: center;
 
 	border: none;
 	border-radius: 5px;
 
 	font-size: 14px;
-	transition: all 0.5s;
 }
 
 .primary {
@@ -31,4 +31,19 @@
 
 .ghost:hover {
 	border: 1px solid var(--primary-hover);
+}
+
+.arrow {
+	display: inline-block;
+
+	margin-left: 10px;
+}
+
+.down {
+	transition: all 0.5s;
+	transform: rotate(90deg);
+}
+
+.primary svg {
+	fill: var(--white);
 }
