@@ -3,9 +3,9 @@ body {
 	margin: 0;
 	padding: 0;
 
-	font-family:
-		noto-sans
-		sans-serif;
+	background: #F5F6F8;
+
+	font-family: "noto-sans", sans-serif;
 }
 
 a {
@@ -16,4 +16,14 @@ a {
 
 * {
 	box-sizing: border-box;
+}
+
+:root {
+	--black: #3B434E;
+	--white: white;
+	--primary: #7653FC;
+	--red: #FC836D;
+	--green: #1DC37E;
+	--green-light: #C8F8E4;
+	--font-family: "noto-sans", sans-serif;
 }
