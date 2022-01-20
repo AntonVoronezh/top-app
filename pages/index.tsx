@@ -12,7 +12,7 @@ export default function Home(): JSX.Element {
       <P size='l'>Большой</P>
 
 
-      <Tag size='l'>мелк</Tag>
+      <Tag size='s'>мелк</Tag>
       <Tag size='m' color='red'>red</Tag>
       <Tag size='m' color='green'>green</Tag>
       <Tag color='primary'>мелк</Tag>
