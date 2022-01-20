@@ -14,10 +14,33 @@ export const Rating = ({ isEditable = false, rating, setRating, className, ...pr
 
   const constructRating = (currentRating: number) => {
     const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
-      return <StarIcon className={cn(styles.star, { [styles.filled]: i < currentRating })} />;
+      return (
+        <StarIcon
+          className={cn(styles.star, { [styles.filled]: i < currentRating, [styles.editable]: isEditable })}
+          onMouseEnter={() => changeDisplay(i + 1)}
+          onMouseLeave={() => changeDisplay(rating)}
+          onClick={() => onClick(i + 1)}
+        />
+      );
     });
 
     setRatingArray(updatedArray);
+  };
+
+  const changeDisplay = (i: number) => {
+    if (!isEditable) {
+      return;
+    }
+
+    constructRating(i);
+  };
+
+  const onClick = (i: number) => {
+    if (!isEditable || !setRating) {
+      return;
+    }
+
+    setRating(i);
   };
 
   return (
