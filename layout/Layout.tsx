@@ -1,7 +1,8 @@
 import { LayoutProps } from './Layout.props';
+import { Sidebar } from './Sidebar/Sidebar';
 import styles from './Layout.module.css';
 
-export const Layout = ({ children, ...props }: LayoutProps): JSX.Element => {
+export const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <>
       <Header />
