@@ -13,7 +13,7 @@ const firstCategory = 0;
 function Course({ menu, page, products }: CourseProps): JSX.Element {
   const [rating, setRating] = useState(4);
 
-  return <>{products.length}</>;
+  return <>{products && products.length}</>;
 }
 
 export default withLayout(Course);
@@ -22,7 +22,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', { firstCategory });
 
   return {
-    paths: menu.flatMap((item) => item.pages.map((p) => '/courses/' + p.alias)),
+    paths: menu.flatMap((item) => item.pages.map(p => '/courses/' + p.alias)),
     fallback: true,
   };
 };
