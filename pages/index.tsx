@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Htag, P, Rating, Tag } from '../components';
 import { Button } from '../components/Button/Button';
 import { Layout, withLayout } from '../layout/Layout';
+import { GetStaticProps } from 'next';
 
 function Home(): JSX.Element {
   const [rating, setRating] = useState(4);
@@ -35,3 +36,9 @@ function Home(): JSX.Element {
 }
 
 export default withLayout(Home);
+
+export function getStaticProps: GetStaticProps = async ()=>{
+  return {
+    props:
+  }
+}
