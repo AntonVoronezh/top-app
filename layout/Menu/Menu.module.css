@@ -55,11 +55,16 @@
 }
 
 .secondLevelBlock {
-	overflow: hidden;
+	/*overflow: hidden;*/
 
-	padding: 0;
+	/*padding: 0;*/
 
-	list-style: none;
+	/*list-style: none;*/
+	display: none;
+}
+
+.secondLevelBlockOpened {
+	display: block;
 }
 
 .thirdLevel {
@@ -78,5 +83,9 @@
 
 .thirdLevelActive,
 .thirdLevel:hover {
+	color: var(--primary);
+}
+
+.thirdLevelOpened {
 	color: var(--primary);
 }
