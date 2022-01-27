@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { GetStaticPaths, GetStaticPathsContext, GetStaticProps, GetStaticPropsContext } from 'next';
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import axios from 'axios';
 
 import { TopLevelCategory, TopPageModel } from '../../interfaces/page.interface';
@@ -8,11 +7,10 @@ import { ProductModel } from '../../interfaces/product.interface';
 import { withLayout } from '../../layout/Layout';
 import { MenuItem } from '../../interfaces/menu.interface';
 import { firstLevelMenu } from '../../helpers/helpers';
+import { TopPageComponent } from '../../page-components';
 
-function TopPage({ menu, page, products }: TopPageProps): JSX.Element {
-  const [rating, setRating] = useState(4);
-
-  return <>{products && products.length}</>;
+function TopPage({ firstCategory, page, products }: TopPageProps): JSX.Element {
+  return <TopPageComponent firstCategory={firstCategory} page={page} products={products} />;
 }
 
 export default withLayout(TopPage);
@@ -21,9 +19,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   let paths: string[] = [];
   for (const m of firstLevelMenu) {
     const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', { firstCategory: m.id });
-    paths = paths.concat(
-      menu.flatMap((item) => item.pages.map((p) => `/${m.route}/${p.alias}`)),
-    );
+    paths = paths.concat(menu.flatMap((item) => item.pages.map((p) => `/${m.route}/${p.alias}`)));
   }
 
   return {
