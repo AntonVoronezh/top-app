@@ -1,18 +1,9 @@
-.p {
-	margin: 0;
+.card {
+	border-radius: 5px;
+	background: var(--white);
+	box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
 }
 
-.s {
-	font-size: 14px;
-	line-height: 24px;
-}
-
-.m {
-	font-size: 16px;
-	line-height: 24px;
-}
-
-.l {
-	font-size: 18px;
-	line-height: 29px;
+.blue {
+	background: #F9F8FF;
 }
