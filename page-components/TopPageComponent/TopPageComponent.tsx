@@ -1,7 +1,8 @@
 import styles from './TopPageComponent.module.css';
 import { TopPageComponentProps } from './TopPageComponent.props';
-import { Advantages, HhData, Htag, P, Tag } from '../../components';
+import { Advantages, HhData, Htag, Sort, Tag } from '../../components';
 import { TopLevelCategory } from '../../interfaces/page.interface';
+import { SortEnum } from '../../components/Sort/Sort.props';
 
 export const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentProps): JSX.Element => {
   return (
@@ -13,7 +14,7 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
             {products.length}
           </Tag>
         )}
-        <span>Сортировка</span>
+        <Sort sort={SortEnum.Rating} setSort={() => {}} />
       </div>
       <div>{products && products.map((p) => <div key={p._id}>{p.title}</div>)}</div>
       <div className={styles.hhTitle}>

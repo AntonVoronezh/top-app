@@ -1,18 +1,28 @@
-.p {
-	margin: 0;
+.sortIcon {
+    display: none;
 }
 
-.s {
-	font-size: 14px;
-	line-height: 24px;
+.active {
+    font-weight: bold;
+    color: var(--primary);
 }
 
-.m {
-	font-size: 16px;
-	line-height: 24px;
+
+.active .sortIcon {
+    display: block;
+    margin-right: 8px;
 }
 
-.l {
-	font-size: 18px;
-	line-height: 29px;
+.sort {
+    display: inline-block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.sort span {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 20px 1fr;
+    align-items: center;
 }
