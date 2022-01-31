@@ -12,7 +12,7 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
   const [search, setSearch] = useState<string>('');
   const router = useRouter();
 
-  const goToSearch = () => {
+  const goToSearch = (): void => {
     router.push({
       pathname: '/search',
       query: {
