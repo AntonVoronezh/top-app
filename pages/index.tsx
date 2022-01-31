@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { GetStaticProps } from 'next';
 import axios from 'axios';
 
-import { Htag, Input, P, Rating, Tag, Textarea } from '../components';
+import { Htag, Input, P, Rating, Search, Tag, Textarea } from '../components';
 import { Button } from '../components/Button/Button';
 import { withLayout } from '../layout/Layout';
 import { MenuItem } from '../interfaces/menu.interface';
