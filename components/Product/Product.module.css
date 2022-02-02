@@ -283,3 +283,7 @@
 	max-height: auto;
 	padding: 30px;
 }
+
+.rateTitle a {
+	color: var(--primary);
+}

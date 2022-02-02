@@ -27,7 +27,7 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
       } else {
         setError('Что-то пошло не так');
       }
-    } catch (e) {
+    } catch (e: any) {
       setError(e.message);
     }
   };
