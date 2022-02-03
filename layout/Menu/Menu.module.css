@@ -52,6 +52,7 @@
 	list-style: none;
 
 	border-left: 1px solid #DFDFDF;
+	outline-offset: -1px;
 }
 
 .secondLevelBlock {

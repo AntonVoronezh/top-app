@@ -44,4 +44,24 @@
 
 .body {
 	padding: 15px;
+
+	outline: none;
+}
+
+.skipLink {
+	position: fixed;
+	top: 0;
+	left: 100px;
+
+	display: block;
+	overflow: hidden;
+
+	height: 0;
+
+	color: var(--white);
+	background: var(--primary);
+}
+
+.displayed {
+	height: auto;
 }
