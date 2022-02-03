@@ -24,3 +24,7 @@
 .error svg {
 	stroke: var(--red);
 }
+
+.star  {
+	display: inline-block;
+}

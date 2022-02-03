@@ -1,18 +1,17 @@
-import Image from 'next/image';
-import { ForwardedRef, forwardRef, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
-import cn from 'classnames';
-
 import { ProductProps } from './Product.props';
 import styles from './Product.module.css';
-import { Rating } from '../Rating/Rating';
-import { declOfNum, priceRu } from '../../helpers/helpers';
-import { Tag } from '../Tag/Tag';
+import cn from 'classnames';
 import { Card } from '../Card/Card';
-import { Divider } from '../Divider/Divider';
+import { Rating } from '../Rating/Rating';
+import { Tag } from '../Tag/Tag';
 import { Button } from '../Button/Button';
+import { declOfNum, priceRu } from '../../helpers/helpers';
+import { Divider } from '../Divider/Divider';
+import Image from 'next/image';
+import { ForwardedRef, forwardRef, useRef, useState } from 'react';
 import { Review } from '../Review/Review';
 import { ReviewForm } from '../ReviewForm/ReviewForm';
+import { motion } from 'framer-motion';
 
 export const Product = motion(
   forwardRef(({ product, className, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
@@ -30,6 +29,7 @@ export const Product = motion(
         behavior: 'smooth',
         block: 'start',
       });
+      reviewRef.current?.focus();
     };
 
     return (
@@ -95,20 +95,25 @@ export const Product = motion(
           <Divider className={cn(styles.hr, styles.hr2)} />
           <div className={styles.actions}>
             <Button appearance="primary">Узнать подробнее</Button>
-            <Button appearance="ghost" arrow={'right'} className={styles.reviewButton} onClick={() => setIsReviewOpened(!isReviewOpened)}>
+            <Button
+              appearance="ghost"
+              arrow={isReviewOpened ? 'down' : 'right'}
+              className={styles.reviewButton}
+              onClick={() => setIsReviewOpened(!isReviewOpened)}
+            >
               Читать отзывы
             </Button>
           </div>
         </Card>
         <motion.div animate={isReviewOpened ? 'visible' : 'hidden'} variants={variants} initial="hidden">
-          <Card color="blue" className={styles.reviews} ref={reviewRef}>
+          <Card color="blue" className={styles.reviews} ref={reviewRef} tabIndex={isReviewOpened ? 0 : -1}>
             {product.reviews.map((r) => (
               <div key={r._id}>
                 <Review review={r} />
                 <Divider />
               </div>
             ))}
-            <ReviewForm productId={product._id} />
+            <ReviewForm productId={product._id} isOpened={isReviewOpened} />
           </Card>
         </motion.div>
       </div>
