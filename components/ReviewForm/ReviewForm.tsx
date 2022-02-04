@@ -13,7 +13,7 @@ import { IReviewForm, IReviewSentResponse } from './Revw.interface';
 import axios from 'axios';
 import { API } from '../../helpers/api';
 
-export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewFormProps): JSX.Element => {
+export const ReviewForm = ({ productId, isOpened, className, clearErrors, ...props }: ReviewFormProps): JSX.Element => {
   const {
     register,
     control,
@@ -46,6 +46,7 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
           placeholder="Имя"
           error={errors.name}
           tabIndex={isOpened ? 0 : -1}
+          aria-invalid={errors.name ? true : false}
         />
         <Input
           {...register('title', { required: { value: true, message: 'Заполните заголовок' } })}
@@ -53,6 +54,7 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
           className={styles.title}
           error={errors.title}
           tabIndex={isOpened ? 0 : -1}
+          aria-invalid={errors.title ? true : false}
         />
         <div className={styles.rating}>
           <span>Оценка:</span>
@@ -78,9 +80,13 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
           className={styles.description}
           error={errors.description}
           tabIndex={isOpened ? 0 : -1}
+          aria-label='Текст отзыва'
+          aria-invalid={errors.description ? true : false}
         />
         <div className={styles.submit}>
-          <Button appearance="primary" tabIndex={isOpened ? 0 : -1}>Отправить</Button>
+          <Button appearance="primary" tabIndex={isOpened ? 0 : -1} onClick={() => clearErrors()}>
+            Отправить
+          </Button>
           <span className={styles.info}>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
         </div>
       </div>
