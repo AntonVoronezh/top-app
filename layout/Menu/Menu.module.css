@@ -52,14 +52,14 @@
 	list-style: none;
 
 	border-left: 1px solid #DFDFDF;
-	outline-offset: -1px;
 }
 
 .secondLevelBlock {
 	overflow: hidden;
-}
 
-.secondLevelBlockOpened {
+	padding: 0;
+
+	list-style: none;
 }
 
 .thirdLevel {
@@ -78,9 +78,5 @@
 
 .thirdLevelActive,
 .thirdLevel:hover {
-	color: var(--primary);
-}
-
-.thirdLevelOpened {
 	color: var(--primary);
 }
