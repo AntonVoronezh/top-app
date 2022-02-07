@@ -11,7 +11,7 @@ Router.events.on('routeChangeComplete', (url: string) => {
 		ym('hit', url);
 	}
 });
-
+function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
 function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
 	return <>
 		<Head>
