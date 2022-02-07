@@ -29,6 +29,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
         className={cn(styles.skipLink, {
           [styles.displayed]: isSkipLinkDisplayed,
         })}
+        // @ts-ignore
         onKeyDown={skipContentAction}
       >
         Сразу к содержанию
