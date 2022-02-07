@@ -4,16 +4,16 @@ import cn from 'classnames';
 import React from 'react';
 
 export const ButtonIcon = ({ appearance, icon, className, ...props }: ButtonIconProps): JSX.Element => {
-  const IconComp = icons[icon];
-  return (
-    <button
-      className={cn(styles.button, className, {
-        [styles.primary]: appearance == 'primary',
-        [styles.white]: appearance == 'white',
-      })}
-      {...props}
-    >
-      <IconComp />
-    </button>
-  );
+	const IconComp = icons[icon];
+	return (
+		<button
+			className={cn(styles.button, className, {
+				[styles.primary]: appearance == 'primary',
+				[styles.white]: appearance == 'white',
+			})}
+			{...props}
+		>
+			<IconComp />
+		</button>
+	);
 };

@@ -21,6 +21,10 @@
 	gap: 40px;
 }
 
+.sortName {
+	display: none;
+}
+
 .sort button {
 	display: grid;
 	gap: 8px;
@@ -39,8 +43,4 @@
 
 .sort button:not(.active) {
 	grid-template-columns: 1fr;
-}
-
-.sortName {
-	display: none;
 }

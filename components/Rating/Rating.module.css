@@ -2,6 +2,10 @@
 	fill: var(--primary);
 }
 
+.star {
+	display: inline-block;
+}
+
 .star svg {
 	margin-right: 5px;
 }
@@ -18,13 +22,10 @@
 	position: absolute;
 	bottom: -20px;
 	left: 0;
+
 	color: var(--red);
 }
 
 .error svg {
 	stroke: var(--red);
-}
-
-.star  {
-	display: inline-block;
 }
